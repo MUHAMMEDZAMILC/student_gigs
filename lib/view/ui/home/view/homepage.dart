@@ -183,105 +183,102 @@ class _HomeScreenState extends State<HomeScreen> {
                 gap,
                 SizedBox(
                   width: ScreenUtil.screenWidth,
-                  child: Expanded(
-                    flex: 2,
-                    child: ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: 4,
-                      scrollDirection: Axis.vertical,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(paddingSmall),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                border: Border.all(
+                  child: ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: 4,
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(paddingSmall),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: ColorResources.textcolor
+                                      .withOpacity(0.2)),
+                              borderRadius: BorderRadius.circular(10),
+                              color: ColorResources.scaffoldcolor,
+                              boxShadow: [
+                                BoxShadow(
                                     color: ColorResources.textcolor
-                                        .withOpacity(0.2)),
-                                borderRadius: BorderRadius.circular(10),
-                                color: ColorResources.scaffoldcolor,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: ColorResources.textcolor
-                                          .withOpacity(0.1),
-                                      offset: Offset(2, 2))
-                                ]),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    flex: 2,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        AppText(
-                                          text: 'Exmedia',
-                                          textalign: TextAlign.left,
-                                          maxline: 2,
-                                          color: ColorResources.textcolor
-                                              .withOpacity(0.5),
-                                        ),
-                                        gapSmall,
-                                        AppText(
-                                          text: jobs[index],
-                                          textalign: TextAlign.left,
-                                          maxline: 2,
-                                          weight: FontWeight.w500,
-                                        ),
-                                        gap,
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              CupertinoIcons.clock,
-                                              color: ColorResources.GREEN,
-                                            ),
-                                            gapHorizontal,
-                                            AppText(text: 'Posted 4 days ago')
-                                          ],
-                                        ),
-                                        gap,
-                                        AppText(
-                                          text: '400 Daily Rate',
-                                          color: ColorResources.GREEN,
-                                          weight: FontWeight.w500,
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  gapHorizontal,
-                                  Expanded(
-                                      child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                        .withOpacity(0.1),
+                                    offset: Offset(2, 2))
+                              ]),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Icon(
-                                        Icons.bookmark_border_outlined,
+                                      AppText(
+                                        text: 'Exmedia',
+                                        textalign: TextAlign.left,
+                                        maxline: 2,
                                         color: ColorResources.textcolor
-                                            .withOpacity(0.4),
+                                            .withOpacity(0.5),
                                       ),
-                                      gap21,
-                                      ApBtn(
-                                        btncolor: ColorResources.seccolor,
-                                        height: 40,
-                                        onPressed: () {},
-                                        isValid: true,
-                                        child: AppText(
-                                          text: 'Appply',
-                                          color: ColorResources.scaffoldcolor,
-                                        ),
+                                      gapSmall,
+                                      AppText(
+                                        text: jobs[index],
+                                        textalign: TextAlign.left,
+                                        maxline: 2,
+                                        weight: FontWeight.w500,
                                       ),
+                                      gap,
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            CupertinoIcons.clock,
+                                            color: ColorResources.GREEN,
+                                          ),
+                                          gapHorizontal,
+                                          AppText(text: 'Posted 4 days ago')
+                                        ],
+                                      ),
+                                      gap,
+                                      AppText(
+                                        text: '400 Daily Rate',
+                                        color: ColorResources.GREEN,
+                                        weight: FontWeight.w500,
+                                      )
                                     ],
-                                  ))
-                                ],
-                              ),
+                                  ),
+                                ),
+                                gapHorizontal,
+                                Expanded(
+                                    child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Icon(
+                                      Icons.bookmark_border_outlined,
+                                      color: ColorResources.textcolor
+                                          .withOpacity(0.4),
+                                    ),
+                                    gap21,
+                                    ApBtn(
+                                      btncolor: ColorResources.seccolor,
+                                      height: 40,
+                                      onPressed: () {},
+                                      isValid: true,
+                                      child: AppText(
+                                        text: 'Appply',
+                                        color: ColorResources.scaffoldcolor,
+                                      ),
+                                    ),
+                                  ],
+                                ))
+                              ],
                             ),
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      );
+                    },
                   ),
                 ),
                 gap,
