@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   isValid: true,
                                   child: AppText(
                                     text: 'Explore',
-                                    color: ColorResources.textcolor,
+                                    color: ColorResources.scaffoldcolor,
                                   ),
                                 ),
                               ],
@@ -151,18 +151,23 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                           width: ScreenUtil.screenWidth! * 0.3,
                           decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: ColorResources.textcolor
-                                      .withOpacity(0.5)),
+                            image: DecorationImage(image: NetworkImage('https://res.cloudinary.com/highereducation/images/f_auto,q_auto/v1694627620/CyberDegrees.org/typical-day-of-security-software-developer/typical-day-of-security-software-developer.jpg?_i=AA'),fit: BoxFit.cover),
+                            
                               borderRadius: BorderRadius.circular(10)),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                                child: AppText(
-                              text: jobs[index],
-                              textalign: TextAlign.left,
-                              maxline: 2,
-                            )),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                AppText(
+                                                              text: jobs[index],
+                                                              textalign: TextAlign.left,
+                                                              color: ColorResources.scaffoldcolor,
+                                                              weight: FontWeight.w500,
+                                                              maxline: 2,
+                                                            ),
+                              ],
+                            ),
                           ),
                         ),
                       );
@@ -183,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView.builder(
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      itemCount: 2,
+                      itemCount: 4,
                       scrollDirection: Axis.vertical,
                       itemBuilder: (context, index) {
                         return Padding(
@@ -281,13 +286,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 gap,
                 ApBtn(
-                  onPressed: () {},
+                  onPressed: () {
+                    Screen.open(context, ExploreScree());
+                  },
                   isValid: true,
+                  btncolor: ColorResources.seccolor,
                   child: AppText(
                     text: "More Jobs",
                     color: ColorResources.scaffoldcolor,
                   ),
-                  btncolor: ColorResources.seccolor,
                 )
               ],
             ),
